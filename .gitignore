@@ -1,0 +1,35 @@
+# OAuth secrets — NEVER commit
+credentials.json
+token.json
+*.pickle
+
+# User-generated reports (author's are mirrored into dogfood/ explicitly)
+reports/
+**/reports/*.md
+!**/reports/.gitkeep
+
+# Per-workspace whitelist overrides (template ships under plugin/templates/)
+whitelist.local.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Node / website (when added)
+node_modules/
+.next/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp

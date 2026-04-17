@@ -1,0 +1,66 @@
+# Keeper keywords — any candidate whose Subject OR snippet contains one of
+# these (case-insensitive substring match) gets auto-QUARANTINED and will
+# NOT be deleted. Edit freely; one keyword per line; '#' starts a comment.
+
+# Financial
+receipt
+invoice
+refund
+tax
+1099
+w-2
+w2
+statement
+transaction
+wire transfer
+chargeback
+
+# Legal / compliance
+contract
+agreement
+legal
+nda
+subpoena
+settlement
+court
+
+# Account recovery / security
+recovery code
+2fa
+backup code
+verify your identity
+verify your account
+password reset
+security alert
+unusual sign-in
+new device signed in
+
+# Travel / warranty / orders
+confirmation
+booking
+itinerary
+reservation
+warranty
+serial number
+tracking number
+order confirmed
+order shipped
+
+# Medical / insurance
+policy
+claim
+prescription
+diagnosis
+insurance
+copay
+deductible
+lab results
+
+# Employment / school
+offer letter
+w4
+w-4
+transcript
+diploma
+certification
+paystub

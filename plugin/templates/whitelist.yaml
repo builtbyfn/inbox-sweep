@@ -1,0 +1,31 @@
+# Gmail Cleanup — Whitelist
+#
+# Anything matched by these rules is NEVER deleted, even if it's in a delete
+# category and older than the cutoff. Cumulative across runs — once a sender
+# is on here, it's protected forever.
+#
+# Populate from each cluster-report run: when a domain or subject pattern
+# shows up as something you want to keep, add it below.
+
+# Exact substrings matched case-insensitively against the From header.
+# Examples: "notifications@github.com", "@irs.gov", "bank-of-america.com"
+keep_senders: []
+
+# Python regex patterns matched case-insensitively against Subject.
+# Examples:
+#   - "Your.*tax statement.*"
+#   - "Receipt for.*"
+#   - "Order (#|number)"
+keep_subject_patterns: []
+
+# Gmail labels that are always protected. STARRED/IMPORTANT/SENT/DRAFTS are
+# baked in via SAFE_LABELS in the script — this is for extras.
+keep_labels:
+  - STARRED
+  - IMPORTANT
+  - SENT
+  - DRAFTS
+
+# Threads with this many messages (or more) are treated as conversations,
+# not blasts, and auto-kept. Lower = more protective, higher = aggressive.
+keep_threads_with_min_messages: 3

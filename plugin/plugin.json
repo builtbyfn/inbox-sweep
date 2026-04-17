@@ -1,0 +1,33 @@
+{
+  "name": "FN-gmail-cleanup",
+  "displayName": "Inbox Sweep",
+  "description": "Safely drain a Gmail backlog with a 3-phase workflow: dry-run preview, deep cluster-report (keeper keywords + STARRED hard-fail + custom-label quarantine), then whitelist-filtered trash. Moves to Trash with 30-day recovery — never permanent delete by default.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Fahad Noor",
+    "url": "https://github.com/fahadnoor001"
+  },
+  "homepage": "https://github.com/fahadnoor001/inbox-sweep",
+  "license": "MIT",
+  "skills": [
+    "./skills/FN-gmail-cleanup/SKILL.md"
+  ],
+  "hooks": [
+    {
+      "event": "PreToolUse",
+      "matcher": "Bash",
+      "command": "./hooks/pre-cleanup-check.sh",
+      "description": "Block execute runs when no fresh cluster-report exists"
+    }
+  ],
+  "requirements": {
+    "python": ">=3.9",
+    "pip": [
+      "google-api-python-client>=2.100.0",
+      "google-auth-httplib2>=0.1.0",
+      "google-auth-oauthlib>=1.1.0",
+      "PyYAML>=6.0"
+    ]
+  },
+  "tags": ["gmail", "cleanup", "inbox", "productivity", "email"]
+}
