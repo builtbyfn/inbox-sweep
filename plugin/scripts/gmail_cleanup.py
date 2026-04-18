@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Gmail Cleanup Script — Claude Code Native
 
@@ -28,6 +29,14 @@ import time
 from collections import defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
+
+# Force UTF-8 stdout/stderr on Windows so em-dashes, arrows, and checkmarks
+# in reports/CLI output render correctly regardless of the terminal code page.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except (AttributeError, Exception):
+    pass
 
 # ── Constants ────────────────────────────────────────────────────────────────
 
@@ -146,11 +155,18 @@ def get_gmail_service():
             creds.refresh(Request())
         else:
             if not creds_path.exists():
-                print("ERROR: credentials.json not found.")
-                print("If using Gmail MCP via Claude Code, run through the MCP "
-                      "tools instead. For standalone, download OAuth 2.0 Desktop "
-                      "credentials from Google Cloud Console and drop as "
-                      "credentials.json in this folder.")
+                print(f"ERROR: credentials.json not found at {creds_path}")
+                print("")
+                print("Setup (one-time, ~8 min):")
+                print("  1. https://console.cloud.google.com → New Project 'inbox-sweep-<you>'")
+                print("  2. APIs & Services → Library → enable 'Gmail API'")
+                print("  3. OAuth consent screen → External → add your Gmail as Test User")
+                print("  4. Credentials → Create Credentials → OAuth client ID")
+                print("     → Application type: Desktop app")
+                print("  5. Download JSON → rename to 'credentials.json' → drop here:")
+                print(f"     {creds_path.parent}")
+                print("")
+                print("Full walkthrough: docs/setup-google-oauth.md")
                 sys.exit(1)
             flow = InstalledAppFlow.from_client_secrets_file(str(creds_path), SCOPES)
             creds = flow.run_local_server(port=0)
