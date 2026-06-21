@@ -70,4 +70,4 @@ Gmail storage is tied to the total account size including Trash. Messages count 
 No. Trash is purged automatically. If you need a longer recovery window, export to `.mbox` via Google Takeout before running Inbox Sweep.
 
 ## Still stuck?
-Open an issue at https://github.com/fahadnoor001/inbox-sweep/issues — include the exact command, the error message, Python version (`python --version`), and OS.
+Open an issue at https://github.com/builtbyfn/inbox-sweep/issues — include the exact command, the error message, Python version (`python --version`), and OS.

@@ -5,9 +5,9 @@
   "version": "0.1.0",
   "author": {
     "name": "Fahad Noor",
-    "url": "https://github.com/fahadnoor001"
+    "url": "https://github.com/builtbyfn"
   },
-  "homepage": "https://github.com/fahadnoor001/inbox-sweep",
+  "homepage": "https://github.com/builtbyfn/inbox-sweep",
   "license": "MIT",
   "skills": [
     "./skills/FN-gmail-cleanup/SKILL.md"

@@ -36,7 +36,7 @@ Because **you** are the OAuth app owner, you skip Google's CASA verification ent
 
 ### 3. Install the plugin
 ```bash
-git clone https://github.com/fahadnoor001/inbox-sweep.git
+git clone https://github.com/builtbyfn/inbox-sweep.git
 cd inbox-sweep
 pip install -r plugin/requirements.txt
 ```
@@ -111,4 +111,4 @@ See `docs/troubleshooting.md`.
 MIT — see `LICENSE`.
 
 ## Author
-Fahad Noor — [github.com/fahadnoor001](https://github.com/fahadnoor001)
+Fahad Noor — [github.com/builtbyfn](https://github.com/builtbyfn)
