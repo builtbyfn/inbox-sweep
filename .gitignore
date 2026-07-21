@@ -9,7 +9,12 @@ reports/
 !**/reports/.gitkeep
 
 # Per-workspace whitelist overrides (template ships under plugin/templates/)
+# Personal whitelists hold real email addresses — keep OUT of this public repo.
 whitelist.local.yaml
+whitelist.yaml
+
+# Local Claude Code workspace state (personal cleanup logs — never publish)
+.claude/
 
 # Python
 __pycache__/
